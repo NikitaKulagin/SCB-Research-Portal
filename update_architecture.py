@@ -7,10 +7,37 @@
   - Извлечение комментариев (однострочных и многострочных).
   - Для классов/структур – сохранение списка полей и методов.
   - По файлам и функциям – поиск импортов/подключений к другим файлам проекта.
+Добавлена возможность игнорировать указанные директории и файлы.
 """
 
 import os
 import re
+import argparse
+
+# ==============================
+# Параметры командной строки для игнорирования
+# ==============================
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Обновление ARCHITECTURE.md с извлечением информации о проекте."
+    )
+    parser.add_argument(
+        "--ignore-dir",
+        action="append",
+        help="Директория для игнорирования (можно указывать несколько раз)",
+    )
+    parser.add_argument(
+        "--ignore-file",
+        action="append",
+        help="Файл для игнорирования (можно указывать несколько раз)",
+    )
+    return parser.parse_args()
+
+
+# Глобальные переменные для игнорируемых директорий и файлов
+ARGS = parse_args()
+IGNORED_DIRS = ARGS.ignore_dir if ARGS.ignore_dir else []
+IGNORED_FILES = ARGS.ignore_file if ARGS.ignore_file else []
 
 # ==============================
 # Регулярные выражения
@@ -113,7 +140,7 @@ def parse_swift_file(file_path, root_dir, project_files):
     """
     Парсит Swift-файл: ищет классы/структуры, для каждого извлекает описание,
     а также список полей (var/let) и методов (func). Дополнительно собирает
-    строку импортов (если они относятся к локальным файлам).
+    строки импортов (если они относятся к локальным файлам).
     """
     results = []
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -166,7 +193,7 @@ def parse_swift_file(file_path, root_dir, project_files):
                 "description": description,
                 "fields": fields,
                 "methods": methods,
-                "imports": []  # Импорты на уровне файла собираются отдельно
+                "imports": []
             })
             i = j
             continue
@@ -200,7 +227,7 @@ def parse_python_file(file_path, root_dir, project_files):
     """
     Парсит Python-файл: ищет классы и функции, для классов дополнительно
     извлекает поля (присваивания) и методы, а также пытается вычленить docstring.
-    Также собирает строку импортов.
+    Также собирает строки импортов.
     """
     results = []
     with open(file_path, 'r', encoding='utf-8') as f:
@@ -367,7 +394,7 @@ def parse_js_file(file_path, root_dir, project_files):
             class_name = class_match.group(1)
             description = " ".join(doc_buffer) if doc_buffer else ""
             doc_buffer = []
-            # Извлекаем тело класса (brace counting)
+            # Извлекаем тело класса (подсчёт фигурных скобок)
             body_lines = []
             brace_count = 0
             if "{" in line:
@@ -453,20 +480,20 @@ def main():
     # Собираем множество файлов проекта (относительные пути)
     project_files = set()
     for current_path, dirs, files in os.walk(root_dir):
-        if any(s.startswith('.') for s in current_path.split(os.sep)):
-            continue
+        # Убираем скрытые директории и игнорируем указанные
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in IGNORED_DIRS]
         rel_path = os.path.relpath(current_path, root_dir)
         if rel_path == ".":
             rel_path = "."
         for file_name in files:
-            if file_name.startswith('.'):
+            if file_name.startswith('.') or file_name in IGNORED_FILES:
                 continue
             rel_file = os.path.join(rel_path, file_name)
             project_files.add(rel_file)
 
+    # Второй обход для сбора подробной информации
     for current_path, dirs, files in os.walk(root_dir):
-        if any(s.startswith('.') for s in current_path.split(os.sep)):
-            continue
+        dirs[:] = [d for d in dirs if not d.startswith('.') and d not in IGNORED_DIRS]
         rel_path = os.path.relpath(current_path, root_dir)
         if rel_path == ".":
             rel_path = "."
@@ -476,7 +503,7 @@ def main():
                 "details": []
             }
         for file_name in files:
-            if file_name.startswith('.'):
+            if file_name.startswith('.') or file_name in IGNORED_FILES:
                 continue
             file_path = os.path.join(current_path, file_name)
             structure_data[rel_path]["files"].append(file_name)
