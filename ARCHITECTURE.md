@@ -54,7 +54,7 @@
 - **Файл**: `index.html` (язык: html)
   - Html: **index.html**
     - *Описание:* HTML файл
-    - *Импорты:* %PUBLIC_URL%/logo192.png, %PUBLIC_URL%/manifest.json, %PUBLIC_URL%/favicon.ico
+    - *Импорты:* %PUBLIC_URL%/logo192.png, %PUBLIC_URL%/favicon.ico, %PUBLIC_URL%/manifest.json
 
 ### Папка: `research-portal/src`
 Содержимые файлы:
@@ -62,9 +62,11 @@
 - App.css
 - App.js
 - App.test.js
+- AuthContext.js
 - Home.js
 - Login.js
 - NotFound.js
+- PrivateRoute.js
 - Register.js
 - Research.js
 - index.css
@@ -88,7 +90,7 @@
     - *Импорты:* ./components/Layout
 - **Файл**: `index.js` (язык: js)
   - File_imports: **index.js**
-    - *Импорты:* ./reportWebVitals, ./App
+    - *Импорты:* ./App, ./reportWebVitals, ./AuthContext
 - **Файл**: `Register.js` (язык: js)
   - Function: **Register**
   - File_imports: **Register.js**
@@ -100,14 +102,18 @@
 - **Файл**: `Login.js` (язык: js)
   - Function: **Login**
   - File_imports: **Login.js**
-    - *Импорты:* ./components/Layout
+    - *Импорты:* ./components/Layout, ./AuthContext
 - **Файл**: `App.test.js` (язык: js)
   - File_imports: **App.test.js**
     - *Импорты:* ./App
+- **Файл**: `PrivateRoute.js` (язык: js)
+  - Function: **PrivateRoute**
+  - File_imports: **PrivateRoute.js**
+    - *Импорты:* ./AuthContext
 - **Файл**: `App.js` (язык: js)
   - Function: **App**
   - File_imports: **App.js**
-    - *Импорты:* ./components/Header, ./NotFound, ./Register, ./AdminDashboard, ./Research, ./Home, ./Login, ./components/Footer
+    - *Импорты:* ./Research, ./Home, ./AdminDashboard, ./NotFound, ./Register, ./Login, ./PrivateRoute
 
 ### Папка: `research-portal/src/components`
 Содержимые файлы:
@@ -119,9 +125,11 @@
 - **Файл**: `Layout.js` (язык: js)
   - Function: **Layout**
   - File_imports: **Layout.js**
-    - *Импорты:* ./Footer, ./Header
+    - *Импорты:* ./Header, ./Footer
 - **Файл**: `Header.js` (язык: js)
   - Function: **Header**
+  - File_imports: **Header.js**
+    - *Импорты:* ../AuthContext
 - **Файл**: `Footer.js` (язык: js)
   - Function: **Footer**
 

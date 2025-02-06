@@ -1,30 +1,57 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
-import './App.css';
 
 import Home from './Home';
 import Login from './Login';
 import Register from './Register';
 import Research from './Research';
 import AdminDashboard from './AdminDashboard';
+import PrivateRoute from './PrivateRoute';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
 import NotFound from './NotFound';
 
+import './App.css';
+
 function App() {
+
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Проверяем, есть ли текущий пользователь в Local Storage
+    const user = localStorage.getItem('currentUser');
+    if (user) {
+      setIsAuthenticated(true);
+    } else {
+      setIsAuthenticated(false);
+    }
+  }, []);
+
+
   return (
     <Router>
       <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/research" element={<Research />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home isAuthenticated={isAuthenticated} />} />
+        <Route path="/login" element={<Login isAuthenticated={isAuthenticated} />} />
+        <Route path="/register" element={<Register isAuthenticated={isAuthenticated} />} />
+        <Route
+          path="/research"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <Research isAuthenticated={isAuthenticated} />
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated}>
+              <AdminDashboard isAuthenticated={isAuthenticated} />
+            </PrivateRoute>
+          }
+        />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       </div>
     </Router>
   );

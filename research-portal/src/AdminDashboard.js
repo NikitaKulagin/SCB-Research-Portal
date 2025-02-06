@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from './components/Layout';
 
-function AdminDashboard() {
+function AdminDashboard({ isAuthenticated }) {
   return (
-    <Layout>
+    <Layout isAuthenticated={isAuthenticated}>
       <h1>Панель администратора</h1>
     </Layout>
   );

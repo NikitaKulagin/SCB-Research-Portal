@@ -8,11 +8,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Общий стиль для body */
 body {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 400; /* Regular */
   background-color: #f8f9fa; /* Светлый фон */
 }
@@ -27,8 +27,8 @@ body {
 /* Заголовки */
 h1, h2, h3, h4, h5, h6 {
   color: #333;
-  font-weight: 700; /* Bold */
   margin-bottom: 20px;
+  font-weight: 700; /* Bold */
 }
 
 /* Параграфы */
@@ -50,12 +50,6 @@ a:hover {
 /* Стили для навигации */
 .navbar {
   margin-bottom: 20px;
-  font-family: 'Montserrat', sans-serif;
-}
-
-.navbar-brand,
-.navbar-nav .nav-link {
-  font-weight: 700; /* Bold */
 }
 
 /* Подвал */
@@ -66,9 +60,13 @@ footer {
   position: fixed;
   width: 100%;
   bottom: 0;
+  left: 0;
 }
 
-/* Отступ сверху для содержимого, чтобы не перекрывалось фиксированной навигацией */
+/* Отступ снизу для содержимого, чтобы не перекрывалось фиксированным подвалом */
 .content {
-  margin-bottom: 60px;
+  margin-bottom: 80px; /* высота подвала + дополнительный отступ */
 }
+
+/* Дополнительные стили при необходимости */
+/* ... */

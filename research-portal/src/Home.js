@@ -1,9 +1,9 @@
 import React from 'react';
 import Layout from './components/Layout';
 
-function Home() {
+function Home({ isAuthenticated }) {
   return (
-    <Layout>
+    <Layout isAuthenticated={isAuthenticated}>
       <h1>Добро пожаловать на Research-портал</h1>
     </Layout>
   );
