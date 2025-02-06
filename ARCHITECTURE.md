@@ -35,6 +35,96 @@
   - File_imports: **update_architecture.py**
     - *Импорты:* re
 
+### Папка: `research-portal`
+Содержимые файлы:
+- README.md
+- package-lock.json
+- package.json
+
+### Папка: `research-portal/public`
+Содержимые файлы:
+- favicon.ico
+- index.html
+- logo192.png
+- logo512.png
+- manifest.json
+- robots.txt
+
+**Детали по файлам:**
+- **Файл**: `index.html` (язык: html)
+  - Html: **index.html**
+    - *Описание:* HTML файл
+    - *Импорты:* %PUBLIC_URL%/logo192.png, %PUBLIC_URL%/manifest.json, %PUBLIC_URL%/favicon.ico
+
+### Папка: `research-portal/src`
+Содержимые файлы:
+- AdminDashboard.js
+- App.css
+- App.js
+- App.test.js
+- Home.js
+- Login.js
+- NotFound.js
+- Register.js
+- Research.js
+- index.css
+- index.js
+- logo.svg
+- reportWebVitals.js
+- setupTests.js
+
+**Детали по файлам:**
+- **Файл**: `NotFound.js` (язык: js)
+  - Function: **NotFound**
+  - File_imports: **NotFound.js**
+    - *Импорты:* ./components/Layout
+- **Файл**: `Research.js` (язык: js)
+  - Function: **Research**
+  - File_imports: **Research.js**
+    - *Импорты:* ./components/Layout
+- **Файл**: `AdminDashboard.js` (язык: js)
+  - Function: **AdminDashboard**
+  - File_imports: **AdminDashboard.js**
+    - *Импорты:* ./components/Layout
+- **Файл**: `index.js` (язык: js)
+  - File_imports: **index.js**
+    - *Импорты:* ./reportWebVitals, ./App
+- **Файл**: `Register.js` (язык: js)
+  - Function: **Register**
+  - File_imports: **Register.js**
+    - *Импорты:* ./components/Layout
+- **Файл**: `Home.js` (язык: js)
+  - Function: **Home**
+  - File_imports: **Home.js**
+    - *Импорты:* ./components/Layout
+- **Файл**: `Login.js` (язык: js)
+  - Function: **Login**
+  - File_imports: **Login.js**
+    - *Импорты:* ./components/Layout
+- **Файл**: `App.test.js` (язык: js)
+  - File_imports: **App.test.js**
+    - *Импорты:* ./App
+- **Файл**: `App.js` (язык: js)
+  - Function: **App**
+  - File_imports: **App.js**
+    - *Импорты:* ./components/Header, ./NotFound, ./Register, ./AdminDashboard, ./Research, ./Home, ./Login, ./components/Footer
+
+### Папка: `research-portal/src/components`
+Содержимые файлы:
+- Footer.js
+- Header.js
+- Layout.js
+
+**Детали по файлам:**
+- **Файл**: `Layout.js` (язык: js)
+  - Function: **Layout**
+  - File_imports: **Layout.js**
+    - *Импорты:* ./Footer, ./Header
+- **Файл**: `Header.js` (язык: js)
+  - Function: **Header**
+- **Файл**: `Footer.js` (язык: js)
+  - Function: **Footer**
+
 <!-- AUTO-GENERATED-CONTENT:END -->
 
 ## 2. MVP Features
