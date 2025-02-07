@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SCB-Research-Portal/static/css/main.630bb695.css",
+    "main.js": "/SCB-Research-Portal/static/js/main.cd0e90b2.js",
+    "static/js/488.3cdc2af1.chunk.js": "/SCB-Research-Portal/static/js/488.3cdc2af1.chunk.js",
+    "index.html": "/SCB-Research-Portal/index.html",
+    "main.630bb695.css.map": "/SCB-Research-Portal/static/css/main.630bb695.css.map",
+    "main.cd0e90b2.js.map": "/SCB-Research-Portal/static/js/main.cd0e90b2.js.map",
+    "488.3cdc2af1.chunk.js.map": "/SCB-Research-Portal/static/js/488.3cdc2af1.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.630bb695.css",
+    "static/js/main.cd0e90b2.js"
+  ]
+}
