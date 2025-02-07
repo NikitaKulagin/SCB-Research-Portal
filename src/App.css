@@ -1,0 +1,69 @@
+/* Импорт шрифта Montserrat с начертаниями 400 (Regular) и 700 (Bold) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/* App.css */
+
+/* Сброс отступов и полей по умолчанию */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Общий стиль для body */
+body {
+  font-weight: 400; /* Regular */
+  background-color: #f8f9fa; /* Светлый фон */
+}
+
+/* Стиль для контейнера */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Заголовки */
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 700; /* Bold */
+}
+
+/* Параграфы */
+p {
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Ссылки */
+a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Стили для навигации */
+.navbar {
+  margin-bottom: 20px;
+}
+
+/* Подвал */
+footer {
+  background-color: #f1f1f1;
+  padding: 10px 0;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+
+/* Отступ снизу для содержимого, чтобы не перекрывалось фиксированным подвалом */
+.content {
+  margin-bottom: 80px; /* высота подвала + дополнительный отступ */
+}
