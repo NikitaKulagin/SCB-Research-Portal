@@ -42,11 +42,23 @@ function Header() {
           <ul className="navbar-nav ms-auto align-items-center">
             {currentUser ? (
               <>
+                {/* Ссылка на страницу исследований */}
                 <li className="nav-item">
                   <Link className="nav-link" to="/research">
                     Исследования
                   </Link>
                 </li>
+
+                {/* Если пользователь администратор, показываем ссылку на админку */}
+                {currentUser.isAdmin && (
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/admin">
+                      Админка
+                    </Link>
+                  </li>
+                )}
+
+                {/* Кнопка выхода */}
                 <li className="nav-item">
                   <button
                     className="btn btn-link nav-link"

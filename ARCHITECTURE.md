@@ -54,11 +54,25 @@
 - **Файл**: `index.html` (язык: html)
   - Html: **index.html**
     - *Описание:* HTML файл
-    - *Импорты:* %PUBLIC_URL%/logo192.png, %PUBLIC_URL%/favicon.ico, %PUBLIC_URL%/manifest.json
+    - *Импорты:* %PUBLIC_URL%/manifest.json, %PUBLIC_URL%/favicon.ico, %PUBLIC_URL%/logo192.png
+
+### Папка: `research-portal/public/pdfs`
+Содержимые файлы:
+- Макромонитор 2025.02.03.pdf
+- Рынок пшеницы 2025.02.01.pdf
+- Рынок стали 2025.01.01.pdf
+
+### Папка: `research-portal/public/thumbnails`
+Содержимые файлы:
+- Макромонитор 2025.02.03.png
+- Рынок пшеницы 2025.02.01.png
+- Рынок стали 2025.01.01.png
 
 ### Папка: `research-portal/src`
 Содержимые файлы:
+- Admin.css
 - AdminDashboard.js
+- AdminRoute.js
 - App.css
 - App.js
 - App.test.js
@@ -68,9 +82,14 @@
 - NotFound.js
 - PrivateRoute.js
 - Register.js
+- Research.css
 - Research.js
+- ResearchDetail.css
+- ResearchDetail.js
+- data.js
 - index.css
 - index.js
+- initData.js
 - logo.svg
 - reportWebVitals.js
 - setupTests.js
@@ -82,15 +101,17 @@
     - *Импорты:* ./components/Layout
 - **Файл**: `Research.js` (язык: js)
   - Function: **Research**
+  - Function: **getUniqueValues**
+    - *Описание:* Загружаем данные исследований из Local Storage Извлекаем уникальные темы и периодичности
   - File_imports: **Research.js**
     - *Импорты:* ./components/Layout
 - **Файл**: `AdminDashboard.js` (язык: js)
   - Function: **AdminDashboard**
   - File_imports: **AdminDashboard.js**
-    - *Импорты:* ./components/Layout
+    - *Импорты:* ./components/AdminLayout
 - **Файл**: `index.js` (язык: js)
   - File_imports: **index.js**
-    - *Импорты:* ./App, ./reportWebVitals, ./AuthContext
+    - *Импорты:* ./App, ./AuthContext, ./reportWebVitals
 - **Файл**: `Register.js` (язык: js)
   - Function: **Register**
   - File_imports: **Register.js**
@@ -98,6 +119,10 @@
 - **Файл**: `Home.js` (язык: js)
   - Function: **Home**
   - File_imports: **Home.js**
+    - *Импорты:* ./components/Layout
+- **Файл**: `ResearchDetail.js` (язык: js)
+  - Function: **ResearchDetail**
+  - File_imports: **ResearchDetail.js**
     - *Импорты:* ./components/Layout
 - **Файл**: `Login.js` (язык: js)
   - Function: **Login**
@@ -110,26 +135,44 @@
   - Function: **PrivateRoute**
   - File_imports: **PrivateRoute.js**
     - *Импорты:* ./AuthContext
+- **Файл**: `AdminRoute.js` (язык: js)
+  - Function: **AdminRoute**
+    - *Описание:* AdminRoute.js
+  - File_imports: **AdminRoute.js**
+    - *Импорты:* ./AuthContext
 - **Файл**: `App.js` (язык: js)
   - Function: **App**
   - File_imports: **App.js**
-    - *Импорты:* ./Research, ./Home, ./AdminDashboard, ./NotFound, ./Register, ./Login, ./PrivateRoute
+    - *Импорты:* ./Register, ./AdminRoute, ./initData, ./AdminDashboard, ./Login, ./Research, ./NotFound, ./PrivateRoute, ./Home, ./ResearchDetail
 
 ### Папка: `research-portal/src/components`
 Содержимые файлы:
+- AdminFooter.js
+- AdminHeader.js
+- AdminLayout.js
 - Footer.js
 - Header.js
 - Layout.js
 
 **Детали по файлам:**
+- **Файл**: `AdminLayout.js` (язык: js)
+  - Function: **AdminLayout**
+  - File_imports: **AdminLayout.js**
+    - *Импорты:* ./AdminFooter, ./AdminHeader
 - **Файл**: `Layout.js` (язык: js)
   - Function: **Layout**
   - File_imports: **Layout.js**
-    - *Импорты:* ./Header, ./Footer
+    - *Импорты:* ./Footer, ./Header
 - **Файл**: `Header.js` (язык: js)
   - Function: **Header**
   - File_imports: **Header.js**
     - *Импорты:* ../AuthContext
+- **Файл**: `AdminHeader.js` (язык: js)
+  - Function: **AdminHeader**
+  - File_imports: **AdminHeader.js**
+    - *Импорты:* ../AuthContext
+- **Файл**: `AdminFooter.js` (язык: js)
+  - Function: **AdminFooter**
 - **Файл**: `Footer.js` (язык: js)
   - Function: **Footer**
 

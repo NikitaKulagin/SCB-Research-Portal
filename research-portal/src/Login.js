@@ -21,7 +21,7 @@ function Login({ isAuthenticated }) {
       
         // Ищем пользователя с введённым email и паролем
         const user = existingUsers.find(
-          (user) => user.email === email && user.password === password
+          (user) => user.email === email.toLowerCase() && user.password === password
         );
       
         if (user) {

@@ -1,0 +1,17 @@
+/* ResearchDetail.css */
+
+.research-detail {
+    margin-top: 20px;
+  }
+  
+  .research-detail h1 {
+    margin-bottom: 20px;
+  }
+  
+  .research-detail p {
+    margin-bottom: 10px;
+  }
+  
+  .research-detail button {
+    margin-right: 10px;
+  }
