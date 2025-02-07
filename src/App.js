@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Home from './Home';
 import Login from './Login';
@@ -39,7 +39,7 @@ function App() {
 
 
   return (
-    <Router basename="/SCB-Research-Portal">
+    <Router>
       <div className="App">
       <Routes>
         <Route path="/" element={<Home isAuthenticated={isAuthenticated} />} />
