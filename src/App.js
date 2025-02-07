@@ -39,7 +39,7 @@ function App() {
 
 
   return (
-    <Router>
+    <Router basename="/SCB-Research-Portal">
       <div className="App">
       <Routes>
         <Route path="/" element={<Home isAuthenticated={isAuthenticated} />} />
