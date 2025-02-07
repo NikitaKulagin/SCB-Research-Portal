@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/SCB-Research-Portal/static/css/main.630bb695.css",
-    "main.js": "/SCB-Research-Portal/static/js/main.10b0da5e.js",
+    "main.js": "/SCB-Research-Portal/static/js/main.3059c1aa.js",
     "static/js/488.d02888f6.chunk.js": "/SCB-Research-Portal/static/js/488.d02888f6.chunk.js",
     "index.html": "/SCB-Research-Portal/index.html",
     "main.630bb695.css.map": "/SCB-Research-Portal/static/css/main.630bb695.css.map",
-    "main.10b0da5e.js.map": "/SCB-Research-Portal/static/js/main.10b0da5e.js.map",
+    "main.3059c1aa.js.map": "/SCB-Research-Portal/static/js/main.3059c1aa.js.map",
     "488.d02888f6.chunk.js.map": "/SCB-Research-Portal/static/js/488.d02888f6.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.630bb695.css",
-    "static/js/main.10b0da5e.js"
+    "static/js/main.3059c1aa.js"
   ]
 }
