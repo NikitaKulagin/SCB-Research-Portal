@@ -7,8 +7,8 @@ const initialResearchData = [
         domain: 'Макромонитор',
         periodicity: 'Еженедельное',
         date: '2025-02-03',
-        pdfUrl: '/pdfs/Макромонитор 2025.02.03.pdf',
-        thumbnailUrl: '/thumbnails/Макромонитор 2025.02.03.png',
+        pdfUrl: 'pdfs/Макромонитор 2025.02.03.pdf',
+        thumbnailUrl: 'thumbnails/Макромонитор 2025.02.03.png',
       },
       {
         id: 2,
@@ -16,8 +16,8 @@ const initialResearchData = [
         domain: 'Зерновые',
         periodicity: 'Ежеквартальное',
         date: '2025-02-05',
-        pdfUrl: '/pdfs/Рынок пшеницы 2025.02.01.pdf',
-        thumbnailUrl: '/thumbnails/Рынок пшеницы 2025.02.01.png',
+        pdfUrl: 'pdfs/Рынок пшеницы 2025.02.01.pdf',
+        thumbnailUrl: 'thumbnails/Рынок пшеницы 2025.02.01.png',
       },
   ];
   
