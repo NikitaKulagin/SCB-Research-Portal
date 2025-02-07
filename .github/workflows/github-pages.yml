@@ -3,7 +3,10 @@ name: Deploy React App to GitHub Pages
 on:
   push:
     branches:
-      - main  # Замените на 'main', если это ваша основная ветка
+      - main  # Или 'master', если это ваша основная ветка
+
+permissions:
+  contents: write
 
 jobs:
   build-and-deploy:
@@ -15,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Замените на вашу версию Node.js
+          node-version: '18'  # Укажите вашу версию Node.js
 
       - name: Install dependencies
         run: npm install
@@ -29,5 +32,6 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          personal_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: build
